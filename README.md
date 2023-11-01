@@ -30,8 +30,9 @@
 
 # 📖 Blog-App <a name="technology-blog-app"></a>
 
-<b>This is Technology-Blog-App.</b>
+<b>This is Blog-App.</b>
 The "blog-app" project focuses on establishing the foundational data model and database structure using Ruby on Rails. This phase lays the groundwork for a blogging platform, including user management, posts, comments, and likes.
+and mainly focuses preparing the data model and the structure for the project.
 
 ## 🛠 Built With <a name="built-with"></a>
 <div >
