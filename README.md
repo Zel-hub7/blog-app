@@ -28,10 +28,10 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Technology Blog App <a name="technology-blog-app"></a>
+# 📖 Blog-App <a name="technology-blog-app"></a>
 
 <b>This is Technology-Blog-App.</b>
-A Ruby on Rails application, but in this milestone we focused on building all the project migrates that will sustain the project business logic !
+The "blog-app" project focuses on establishing the foundational data model and database structure using Ruby on Rails. This phase lays the groundwork for a blogging platform, including user management, posts, comments, and likes.
 
 ## 🛠 Built With <a name="built-with"></a>
 <div >
