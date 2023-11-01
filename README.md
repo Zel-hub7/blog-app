@@ -90,7 +90,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```bash
-  cd technology_blog_app
+  cd blog-app
   bundle install
 ```
 
