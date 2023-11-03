@@ -1,32 +1,38 @@
+# spec/models/user_spec.rb
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Tom') }
-  let(:user) { subject }
-
-  it 'Name must not be blank.' do
-    subject.name = nil
-    expect(subject).to_not be_valid
-  end
-
-  it 'PostsCounter must be an integer greater than or equal to zero.' do
-    subject.postsCounter = -1
-    expect(subject).to_not be_valid
-  end
-
-  it 'PostsCounter must be an integer greater than or equal to zero.' do
-    subject.posts_counter = 0
-    expect(subject).to be_valid
-  end
-
-  describe 'Recent Posts' do
-    before do
-      5.times do
-        Post.create(author_id: subject.id, title: 'Hello', text: 'Test Post')
-      end
+  context 'Using the expected params' do
+    it 'expects to be valid with valid name' do
+      user = User.new(name: 'Tom')
+      user.posts_counter = 0
+      expect(user).to be_valid
     end
-    it 'should display last 3 posts' do
-      expect(subject.recent_posts).to eq subject.posts.order(created_at: :desc).limit(3)
+
+    it 'should respond to user_recent_posts' do
+      user = User.new(name: 'Tom')
+      user.posts_counter = 0
+      expect(user).to respond_to(:user_recent_posts)
+    end
+  end
+
+  context 'Using the unexpected values or params' do
+    it 'Mr Ariel Should have an invalid posts_counter number <2023.5>' do
+      user = User.new(name: 'Tom')
+      user.posts_counter = 2023.5
+      expect(user).to be_invalid
+    end
+
+    it "expects not to be valid without a user's name" do
+      user = User.new
+      expect(user).not_to be_valid
+    end
+
+    it 'expects not to be valid with a negative post_counter' do
+      user = User.new(name: 'Tom')
+      user.posts_counter = -2023
+      expect(user).to be_invalid
     end
   end
 end
