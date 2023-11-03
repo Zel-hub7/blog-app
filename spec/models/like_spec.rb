@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Like, type: :model do
   before do
     @author_object = User.create(name: 'Ariel_CEO', posts_counter: 0)
-    @post_object = Post.create(title: 'Microverse School', author_id: @author_object.id, comments_counter: 0, likes_counter: 0)
+    @post_object = Post.create(title: 'Microverse School', author_id: @author_object.id, comments_counter: 0,
+                               likes_counter: 0)
   end
 
   it 'Should increase the likes counter number in post table' do
