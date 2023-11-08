@@ -5,6 +5,7 @@ class Post < ApplicationRecord
   validates :title, presence: true, length: { maximum: 250 }
   validates :comments_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
   after_save :update_post_counter
 
   def show_post_comments(post)
@@ -14,6 +15,6 @@ class Post < ApplicationRecord
   private
 
   def update_post_counter
-    author.increment!(:posts_counter)
+    author.increment!(:posts_counter) if author.persisted?
   end
 end
