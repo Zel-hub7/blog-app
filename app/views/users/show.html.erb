@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Routes List</title>
+  <title>User Profile</title>
 </head>
 <body>
 
@@ -9,23 +9,17 @@
 <p>Number of Posts: <%= @user.posts_counter %></p>
 <!-- Add other user information you want to display -->
 
-   <h2>Bio</h2>
-   <p>Lorem..............</p>
-<h1><%= @user.name %></h1>
-<p>Number of Posts: <%= @user.posts_counter %></p>
+<h2>Bio</h2>
+<p><%= @user.bio %></p>
 
-<h2>Posts</h2>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <h3><%= post.title %></h3>
-      <p><%= post.text %></p>
-    </li>
-  <% end %>
-</ul>
+<% @posts.order(:id).each_with_index do |post, index| %>
+  <div class="post">
+    <h3>Post #<%= index + 1 %></h3>
+    <p><%= post.text %></p>
+    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+  </div>
+<% end %>
 
-
-
-   <button> See all posts</button>
+<button>See all posts</button>
 </body>
 </html>
