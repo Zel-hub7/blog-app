@@ -1,30 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Routes List</title>
-</head>
-<body>
+<h1>Posts for <%= @user.name %></h1>
 
-    <h1>User name</h1>
-    <p>Number of posts: x</p>
+<!-- Display the user's name -->
+<p>User: <%= @user.name %></p>
 
-    <h2>Post #1</h2>
-    <p>Lorem ....</p>
-
-    <p>Username: Comment 1</p>
-    <p>Username: Comment 2</p>
-    <p>Username: Comment 3</p>
-    <p>Username: Comment 4</p>
-    <p>Username: Comment 5</p>
-
-    <h2>Post #2</h2>
-    <p>Lorem ipsum........</p>
-
-    <p>Username: Comment 1</p>
-    <p>Username: Comment 2</p>
-    <p>Username: Comment 3</p>
-    <p>Username: Comment 4</p>
-    <p>Username: Comment 5</p>
-
-</body>
-</html>
+<!-- Loop through and display the user's posts -->
+<% @posts.each do |post| %>
+  <div class="post">
+    <h2><%= post.title %></h2>
+    <p><%= post.text %></p>
+    <!-- You can add more post details here -->
+  </div>
+<% end %>
