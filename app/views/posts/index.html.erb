@@ -1,13 +1,16 @@
-<h1>Posts for <%= @user.name %></h1>
+<h2><%= @user.name %></h2>
+<h6>Number of posts: <%= @user.posts_counter %></h6>
 
-<!-- Display the user's name -->
-<p>User: <%= @user.name %></p>
+<h2>Bio</h2>
+<p><%= @user.bio %></p>
 
-<!-- Loop through and display the user's posts -->
-<% @posts.each do |post| %>
+<% @posts.order(:id).each_with_index do |post, index| %>
   <div class="post">
-    <h2><%= post.title %></h2>
+    <h2>Post #<%= index + 1 %></h2>
     <p><%= post.text %></p>
-    <!-- You can add more post details here -->
+
   </div>
+
+  
 <% end %>
+<button>See all posts</button>
