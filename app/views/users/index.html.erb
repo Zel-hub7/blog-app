@@ -4,33 +4,16 @@
   <title>Routes List</title>
 </head>
 <body>
-    <div class = "section">
-        <h2>User Name</h2>
-         
-         <h6>Number of posts x</h6>
-         
-    </div>
-
-        <div class = "section">
-        <h2>User Name</h2>
-         
-         <h6>Number of posts x</h6>
-         
-    </div>
-
-        <div class = "section">
-        <h2>User Name</h2>
-         
-         <h6>Number of posts x</h6>
-         
-    </div>
-
-        <div class = "section">
-        <h2>User Name</h2>
-         
-         <h6>Number of posts x</h6>
-         
-    </div>
-    
+  <div class="section">
+    <% @users.each do |user| %>
+      <%= link_to user_path(user) do %>
+       <div class = "profile">
+        <img class = "image" src="<%= user.photo %>" alt="User Photo">
+        <h2><%= user.name %></h2>
+        <h6>Number of posts <%= user.posts_counter %></h6>
+       </div>
+      <% end %>
+    <% end %>
+  </div>
 </body>
 </html>

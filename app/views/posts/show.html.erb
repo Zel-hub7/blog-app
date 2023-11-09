@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Routes List</title>
+  <title>Post Details</title>
 </head>
 <body>
 
-<h2>Post #1 by username</h2>
-<p>Lorem ........</p>
+<div class="post">
+  <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
+  <p><%= @post.text %></p>
+  <p>Likes: <%= @likes_count %></p>
+  <p>Comments: <%=@post.comments_counter %></p>
+</div>
 
-    <p>Username: Comment 1</p>
-    <p>Username: Comment 2</p>
-    <p>Username: Comment 3</p>
-    <p>Username: Comment 4</p>
-    <p>Username: Comment 5</p>
-    <p>Username: Comment 1</p>
-    <p>Username: Comment 2</p>
-    <p>Username: Comment 3</p>
-    <p>Username: Comment 4</p>
-    <p>Username: Comment 5</p>
+<h2>Comments</h2>
+
+<% @comments.each do |comment| %>
+  <div class="comment">
+    <p><strong><%= comment.user.name %>:</strong> <%= comment.text %></p>
+  </div>
+<% end %>
 
 </body>
 </html>

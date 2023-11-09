@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Routes List</title>
+  <title>User Profile</title>
 </head>
 <body>
 
-    <h1>User name</h1>
-    <p>Number of posts: x</p>
+<div class = "profile">
+    <img class = "image" src="<%= @user.photo %>" alt="User Photo">
+     <h2><%= @user.name %></h2>
+    <h6>Number of posts <%= @user.posts_counter %></h6>
+</div>
 
-    <h2>Post #1</h2>
-    <p>Lorem ....</p>
 
-    <p>Username: Comment 1</p>
-    <p>Username: Comment 2</p>
-    <p>Username: Comment 3</p>
-    <p>Username: Comment 4</p>
-    <p>Username: Comment 5</p>
+<h2>Bio</h2>
+<p><%= @user.bio %></p>
 
-    <h2>Post #2</h2>
-    <p>Lorem ipsum........</p>
+<% @posts.order(:id).each_with_index do |post, index| %>
+  <div class="post">
+    <%= link_to user_post_path(@user, post) do %>
+      <h2>Post #<%= index + 1 %></h2>
+    <% end %>
+    <p><%= post.text %></p>
+    
+    
 
-    <p>Username: Comment 1</p>
-    <p>Username: Comment 2</p>
-    <p>Username: Comment 3</p>
-    <p>Username: Comment 4</p>
-    <p>Username: Comment 5</p>
+    <% post.comments.each do |comment| %>
+      <p><strong><%= comment.user.name %>:</strong> <%= comment.text %></p>
+    <% end %>
+    <p>Comments: <%= post.comments_counter %></p>
+    <p>Likes: <%= post.likes_counter %></p>
+  </div>
+<% end %>
 
+
+<button>Pagination</button>
 </body>
 </html>
