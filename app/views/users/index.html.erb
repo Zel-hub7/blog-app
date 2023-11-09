@@ -7,9 +7,11 @@
   <div class="section">
     <% @users.each do |user| %>
       <%= link_to user_path(user) do %>
-        <img src="<%= user.photo %>" alt="User Photo">
+       <div class = "profile">
+        <img class = "image" src="<%= user.photo %>" alt="User Photo">
         <h2><%= user.name %></h2>
         <h6>Number of posts <%= user.posts_counter %></h6>
+       </div>
       <% end %>
     <% end %>
   </div>
