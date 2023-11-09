@@ -14,12 +14,17 @@
 
 <% @posts.order(:id).each_with_index do |post, index| %>
   <div class="post">
-    <h3>Post #<%= index + 1 %></h3>
-    <p><%= post.text %></p>
-    <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+    <%= link_to user_post_path(@user, post) do %>
+      <h3>Post #<%= index + 1 %></h3>
+      <p><%= post.text %></p>
+      <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
+    <% end %>
   </div>
 <% end %>
 
-<button>See all posts</button>
+<%= link_to user_posts_path(@user) do %>
+  <button>See all posts</button>
+<% end %>
+
 </body>
 </html>
