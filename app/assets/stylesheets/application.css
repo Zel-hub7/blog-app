@@ -1,13 +1,14 @@
 *{
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .profile {
-    display: flex;
-    border: solid black 1px;
-    margin: 5px;
-    justify-content: space-between;
+  display: flex;
+  border: solid black 1px;
+  margin: 5px;
+  justify-content: space-between;
 }
+
 .image {
-    width: 20%;
+  width: 20%;
 }
