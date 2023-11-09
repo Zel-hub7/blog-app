@@ -2,11 +2,13 @@ class PostsController < ApplicationController
   before_action :set_user
 
   def index
-    @posts = @user.posts
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
-    # Show the details of an individual post (if needed)
+    @post = Post.includes(:comments).find(params[:id])
+    @comments = @post.comments
+    @likes_count = @post.likes_counter
   end
 
   private
