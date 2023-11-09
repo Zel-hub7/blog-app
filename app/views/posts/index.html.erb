@@ -1,14 +1,23 @@
-<h2><%= @user.name %></h2>
-<h6>Number of posts: <%= @user.posts_counter %></h6>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+</head>
+<body>
+
+<h1><%= @user.name %></h1>
+<p>Number of Posts: <%= @user.posts_counter %></p>
+<!-- Add other user information you want to display -->
 
 <h2>Bio</h2>
 <p><%= @user.bio %></p>
 
 <% @posts.order(:id).each_with_index do |post, index| %>
   <div class="post">
-    <h2>Post #<%= index + 1 %></h2>
+    <%= link_to user_post_path(@user, post) do %>
+      <h2>Post #<%= index + 1 %></h2>
+    <% end %>
     <p><%= post.text %></p>
- 
 
     <% post.comments.each do |comment| %>
       <p><strong><%= comment.user.name %>:</strong> <%= comment.text %></p>
@@ -17,4 +26,8 @@
     <p>Likes: <%= post.likes_counter %></p>
   </div>
 <% end %>
+
+
 <button>Pagination</button>
+</body>
+</html>
