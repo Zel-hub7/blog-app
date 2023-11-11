@@ -64,6 +64,40 @@ and mainly focuses preparing the data model and the structure for the project.
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
+## 1. Clone Repository:
+git clone https://github.com/Zel-hub7/blog-app
+cd blog-app
+
+## 2. Install Dependencies:
+bundle install
+
+## 3. Setup Database:
+rails db:setup
+
+## 4. Run Migrations:
+rails db:migrate
+
+## 5. Start Application:
+rails server
+
+## 6. Access Local App:
+Open your browser and go to http://localhost:3000
+
+# 🚀 Usage:
+
+## - Create Database and Migrate:
+rails db:create
+rails db:migrate
+
+## - Seed Database (Optional):
+rails db:seed
+
+## - Start Server:
+rails server
+
+## - Access Local App:
+Open your browser and go to http://localhost:3000
+
 
 ### Prerequisites
 
@@ -79,21 +113,6 @@ In order to run this project you need:
     IDE eg: {VScode}
 ```
 
-### Setup
-
-Clone this repository to your desired folder:
-
-```bash
-  git clone https://github.com/Zel-hub7/blog-app.git
-```
-### Install
-
-Install this project with:
-
-```bash
-  cd blog-app
-  bundle install
-```
 
 it will install the required gemfile for running the project
 
