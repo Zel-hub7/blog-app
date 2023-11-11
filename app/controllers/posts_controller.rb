@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = @user.posts.build
   end
 
-# app/controllers/posts_controller.rb
+  # app/controllers/posts_controller.rb
 
   def create
     @post = @user.posts.build(post_params)

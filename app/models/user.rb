@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: 'user_id'
 
   validates :name, presence: true
-  
+
 
   after_save :update_posts_counter
 
