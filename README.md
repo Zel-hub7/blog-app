@@ -63,6 +63,8 @@ and mainly focuses preparing the data model and the structure for the project.
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
+
+
 To get a local copy up and running, follow these steps.
 ## 1. Clone Repository:
 git clone https://github.com/Zel-hub7/blog-app
@@ -89,6 +91,8 @@ Open your browser and go to http://localhost:3000
 rails db:create
 rails db:migrate
 
+
+=======
 ## - Seed Database (Optional):
 rails db:seed
 
@@ -97,6 +101,7 @@ rails server
 
 ## - Access Local App:
 Open your browser and go to http://localhost:3000
+
 
 
 ### Prerequisites
