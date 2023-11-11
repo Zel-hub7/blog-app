@@ -11,6 +11,11 @@
   <p>Likes: <%= @likes_count %></p>
   <p>Comments: <%=@post.comments_counter %></p>
 </div>
+<%= form_with(model: [@user, @post, Like.new], url: user_post_likes_path(@user, @post), method: :post) do |like_form| %>
+  <div>
+    <%= like_form.submit "Like" %>
+  </div>
+<% end %>
 
 <h2>Comments</h2>
 
@@ -19,6 +24,19 @@
     <p><strong><%= comment.user.name %>:</strong> <%= comment.text %></p>
   </div>
 <% end %>
+
+<%= form_with(model: [@user, @post, Comment.new], url: user_post_comments_path(@user, @post), method: :post) do |comment_form| %>
+  <div>
+    <%= comment_form.label :text, 'Add a Comment' %>
+    <%= comment_form.text_area :text %>
+  </div>
+
+  <div>
+    <%= comment_form.submit "Add Comment" %>
+  </div>
+<% end %>
+
+
 
 </body>
 </html>
