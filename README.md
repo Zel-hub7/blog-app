@@ -92,6 +92,18 @@ rails db:create
 rails db:migrate
 
 
+=======
+## - Seed Database (Optional):
+rails db:seed
+
+## - Start Server:
+rails server
+
+## - Access Local App:
+Open your browser and go to http://localhost:3000
+
+
+
 ### Prerequisites
 
 In order to run this project you need:
@@ -106,21 +118,6 @@ In order to run this project you need:
     IDE eg: {VScode}
 ```
 
-### Setup
-
-Clone this repository to your desired folder:
-
-```bash
-  git clone https://github.com/Zel-hub7/blog-app.git
-```
-### Install
-
-Install this project with:
-
-```bash
-  cd blog-app
-  bundle install
-```
 
 it will install the required gemfile for running the project
 
