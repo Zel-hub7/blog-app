@@ -30,7 +30,6 @@ class PostsController < ApplicationController
     end
   end
 
-
   private
 
   def set_user
