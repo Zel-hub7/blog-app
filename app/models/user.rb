@@ -7,7 +7,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-
   after_save :update_posts_counter
 
   def user_recent_posts
