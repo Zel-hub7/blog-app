@@ -287,7 +287,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  capybara
+  capybara (>= 3.0, < 4.0)
   debug
   importmap-rails
   jbuilder

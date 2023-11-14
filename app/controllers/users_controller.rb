@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @posts = Post.where(author_id: @user.id)
+    @user = User.includes(posts: :comments).find(params[:id])
+    @posts = @user.posts
   end
 end
