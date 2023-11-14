@@ -16,6 +16,7 @@ class User < ApplicationRecord
   private
 
   def update_posts_counter
-    update(posts_counter: posts&.count.to_i)
+    new_counter_value = posts&.count.to_i
+    update(posts_counter: new_counter_value) unless posts_counter == new_counter_value
   end
 end
