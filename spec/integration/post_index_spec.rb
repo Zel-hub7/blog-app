@@ -43,7 +43,6 @@ RSpec.describe 'Post Index', type: :feature do
     expect(page).to have_content('Post content 1')
   end
 
-
   it 'displays how many comments a post has' do
     visit user_posts_path(user_id: user.id)
 
