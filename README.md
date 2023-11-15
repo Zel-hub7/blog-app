@@ -132,7 +132,9 @@ it will install the required gemfile for running the project
 👤 **Zelalem**
 
 - GitHub: [@Zelalem](https://github.com/Zel-hub7)
+👤 **Aly**
 
+- GitHub: [@alyatalla](https://github.com/alyatalla)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
