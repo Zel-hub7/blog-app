@@ -5,7 +5,7 @@ RSpec.describe 'User Index', type: :feature do
     it 'displays user information' do
       # Create a few users to be displayed on the index page
       user1 = User.create(name: 'John Doe', photo: 'example1.jpg', bio: 'A test bio', posts_counter: 5)
-      user2 = User.create(name: 'Jane Smith', photo: 'example2.jpg', bio: 'Another test bio', posts_counter: 10)
+      User.create(name: 'Jane Smith', photo: 'example2.jpg', bio: 'Another test bio', posts_counter: 10)
 
       # Visit the users index page
       visit users_path
