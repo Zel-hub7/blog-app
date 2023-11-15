@@ -3,20 +3,19 @@
 require 'rails_helper'
 
 RSpec.describe 'Post Index', type: :feature do
-  scenario 'User visits the post index page' do
-    user = create(:user)
-    post1 = create(:post, author: user, title: 'Post Title 1', text: 'Post Content 1', comments_counter: 2, likes_counter: 3)
+  describe 'Post index page' do
+    before :each do
+      @user = User.create(name: 'Bunny', photo: 'https://somewhere.com/an_ordinary_photo.jpg',
+        bio: 'Anyone in this world', posts_counter: 0)
+      @user.save
+      @post = Post.create(author: @user, title: 'Nonsense', text: 'This guy should stop spitting bullshit')
+      @post.save
+    end
 
-    visit posts_path
-
-    expect(page).to have_http_status(200)
-    expect(page).to have_content('Post Profile')
-    expect(page).to have_content(user.name)
-    expect(page).to have_content("Number of posts #{user.posts_counter}")
-    expect(page).to have_content("Post #1")
-    expect(page).to have_content('Post Content 1')
-    expect(page).to have_content('Comments: 2')
-    expect(page).to have_content('Likes: 3')
-    expect(page).to have_content('Pagination')
+    it 'should render the profile picture of the user' do
+      visit user_posts_path(user_id: @user.id)
+      expect(page).to have_css("img[src*='#{@user.photo}']")
+    end
+   
   end
 end

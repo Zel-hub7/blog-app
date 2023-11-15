@@ -18,6 +18,7 @@
   <div class="post"> <!-- Add the "post" class here -->
     <%= link_to user_post_path(@user, post) do %>
       <h3>Post #<%= index + 1 %></h3>
+      <p><%= post.title %></p>
       <p><%= post.text %></p>
       <p>Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %></p>
     <% end %>
