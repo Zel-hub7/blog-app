@@ -34,9 +34,12 @@ RSpec.describe 'User Show', type: :feature do
 
   it 'displays the titles of the user\'s first 3 posts' do
     user = User.create(name: 'John Doe', photo: 'user_photo.jpg', bio: 'Some bio', posts_counter: 2)
-    post1 = Post.create(author: user, title: 'Post Title 1', text: 'Post content 1', comments_counter: 1, likes_counter: 5)
-    post2 = Post.create(author: user, title: 'Post Title 2', text: 'Post content 2', comments_counter: 3, likes_counter: 10)
-    post3 = Post.create(author: user, title: 'Post Title 3', text: 'Post content 3', comments_counter: 2, likes_counter: 8)
+    post1 = Post.create(author: user, title: 'Post Title 1', text: 'Post content 1', comments_counter: 1,
+                        likes_counter: 5)
+    post2 = Post.create(author: user, title: 'Post Title 2', text: 'Post content 2', comments_counter: 3,
+                        likes_counter: 10)
+    post3 = Post.create(author: user, title: 'Post Title 3', text: 'Post content 3', comments_counter: 2,
+                        likes_counter: 8)
 
     visit user_path(user)
 
@@ -51,7 +54,8 @@ RSpec.describe 'User Show', type: :feature do
 
   it 'redirects to the post show page when a user\'s post is clicked' do
     user = User.create(name: 'John Doe', photo: 'user_photo.jpg', bio: 'Some bio', posts_counter: 2)
-    post1 = Post.create(author: user, title: 'Post Title 1', text: 'Post content 1', comments_counter: 1, likes_counter: 5)
+    post1 = Post.create(author: user, title: 'Post Title 1', text: 'Post content 1', comments_counter: 1,
+                        likes_counter: 5)
 
     visit user_path(user)
 
@@ -67,11 +71,7 @@ RSpec.describe 'User Show', type: :feature do
     visit user_path(user)
 
     click_link 'See all posts'
-  
+
     expect(page).to have_current_path(user_posts_path(user))
   end
-  
-  
-  
-  
 end

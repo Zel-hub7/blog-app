@@ -64,7 +64,6 @@ RSpec.describe 'Post Index', type: :feature do
   end
 
   it 'displays a pagination link if there are more posts than fit on the view' do
-    
     visit user_posts_path(user_id: user.id)
 
     expect(page).to have_link('Pagination')

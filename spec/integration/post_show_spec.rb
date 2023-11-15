@@ -68,8 +68,8 @@ RSpec.describe 'Post Details', type: :feature do
     # Assuming you have a user, a post, and some comments set up in your database
     user = User.create(name: 'John Doe', photo: 'user_photo.jpg', bio: 'Some bio', posts_counter: 2)
     post = Post.create(author: user, title: 'Post Title', text: 'Post content', comments_counter: 2, likes_counter: 0)
-    comment1 = Comment.create(user: User.create(name: 'Commenter1'), post: post, text: 'First comment')
-    comment2 = Comment.create(user: User.create(name: 'Commenter2'), post: post, text: 'Second comment')
+    comment1 = Comment.create(user: User.create(name: 'Commenter1'), post:, text: 'First comment')
+    comment2 = Comment.create(user: User.create(name: 'Commenter2'), post:, text: 'Second comment')
 
     visit user_post_path(user, post)
 
