@@ -7,6 +7,7 @@
 
 <div class="post">
   <h2>Post #<%= @post.id %> by <%= @post.author.name %></h2>
+  <p><%= @post.title %></p>
   <p><%= @post.text %></p>
   <p>Likes: <%= @likes_count %></p>
   <p>Comments: <%=@post.comments_counter %></p>
