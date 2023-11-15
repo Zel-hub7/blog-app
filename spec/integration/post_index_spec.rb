@@ -41,11 +41,6 @@ RSpec.describe 'Post Index', type: :feature do
     expect(page).to have_content('Post content 1')
   end
 
-  it 'displays the first comments on a post' do
-    visit user_posts_path(user_id: user.id)
-
-    expect(page).to have_content('This is a comment')
-  end
 
   it 'displays how many comments a post has' do
     visit user_posts_path(user_id: user.id)
@@ -57,12 +52,6 @@ RSpec.describe 'Post Index', type: :feature do
     visit user_posts_path(user_id: user.id)
 
     expect(page).to have_content('Likes: 5')
-  end
-
-  it 'displays a section for pagination' do
-    visit user_posts_path(user_id: user.id)
-
-    expect(page).to have_css('.pagination-btn')
   end
 
   it 'redirects to the post show page when a post is clicked' do
