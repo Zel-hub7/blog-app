@@ -7,8 +7,10 @@ RSpec.describe 'Post Index', type: :feature do
 
   before do
     # Create a few posts associated with the user
-    post1 = Post.create(author: user, title: 'Post Title 1', text: 'Post content 1', comments_counter: 1, likes_counter: 5)
-    post2 = Post.create(author: user, title: 'Post Title 2', text: 'Post content 2', comments_counter: 3, likes_counter: 10)
+    post1 = Post.create(author: user, title: 'Post Title 1', text: 'Post content 1', comments_counter: 1,
+                        likes_counter: 5)
+    post2 = Post.create(author: user, title: 'Post Title 2', text: 'Post content 2', comments_counter: 3,
+                        likes_counter: 10)
   end
 
   it 'displays the user profile picture' do
