@@ -2,9 +2,15 @@
 
 class PostsController < ApplicationController
   before_action :set_user
+  load_and_authorize_resource
 
   def index
     @posts = @user.posts.includes(:comments)
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to posts_path, notice: 'Post was successfully destroyed.'
   end
 
   def show
